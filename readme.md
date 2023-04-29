@@ -3,9 +3,13 @@
 Name: Team Radix 
 
 Student 1: Rachel Appleyard C22307573
+
 Student 2: Lauren Morgan C22703201
+
 Student 3: Jess Kelly C22463672
+
 Student 4: Thomas West C22345301
+
 
 Class Group: TU984/1
 
