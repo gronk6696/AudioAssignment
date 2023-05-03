@@ -62,58 +62,56 @@ class ScreensHandler{
         myCircle.display();
         break;
       case 2:
-      float total = 0;
-  
-      for(int i = 0; i < music.ab.size(); i++){
-        total += abs(music.ab.get(i));
-      }
-  
-      average = total / (float) music.ab.size();
-      lerpedAverage = lerp(lerpedAverage, average, 0.1f);
-  
-      background(0);
-      noStroke();
-      //stroke(255);
-      //strokeWeight(2);
-  
-      lights();
-  
-      float hue = map(lerpedAverage,0.0f, 1.0f, 0,255);
-      color c = color(hue,255,255);
-  
-      ///scale(zoom, zoom);
-  
-      box.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.1);
-      betterBox.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.08);
-      evenBetterBox.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.13);
-  
-      box.size = map(lerpedAverage, 0.0f, 1.0f, 80, 370);
-      betterBox.size = map(lerpedAverage, 0.0f, 1.0f, 10, 180);
-      evenBetterBox.size = map(lerpedAverage, 0.0f, 1.0f, 180, 650 );
-  
-      box.c = c;
-      betterBox.c = c;
-      evenBetterBox.c = c;
-  
-      box.update();
-      box.render();
-  
-      betterBox.update();
-      betterBox.render();
-  
-      evenBetterBox.update();
-      evenBetterBox.render();
-
-      for(int i = 0; i < cubes.size(); i++){
-        RachelCubeClass current = cubes.get(i);
-        current.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.1) + random(-0.02,0.02);
-        current.size = map(lerpedAverage, 0.0f, 1.0f, 10, 180);
-        current.c = c;
+      //rachel class calls
+        float total = 0;
     
-        current. update();
-        current.render();
-        
-      }
+        for(int i = 0; i < music.ab.size(); i++){
+          total += abs(music.ab.get(i));
+        }
+  
+        average = total / (float) music.ab.size();
+        lerpedAverage = lerp(lerpedAverage, average, 0.1f);
+    
+        background(0);
+        noStroke();
+    
+        lights();
+    
+        float hue = map(lerpedAverage,0.0f, 0.3f, 0,255);
+        color c = color(hue,255,255);
+   
+    
+        box.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.1);
+        betterBox.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.08);
+        evenBetterBox.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.13);
+    
+        box.size = map(lerpedAverage, 0.0f, 1.0f, 80, 370);
+        betterBox.size = map(lerpedAverage, 0.0f, 1.0f, 10, 180);
+        evenBetterBox.size = map(lerpedAverage, 0.0f, 1.0f, 180, 650 );
+    
+        box.c = c;
+        betterBox.c = c;
+        evenBetterBox.c = c;
+    
+        box.update();
+        box.render();
+    
+        betterBox.update();
+        betterBox.render();
+    
+        evenBetterBox.update();
+        evenBetterBox.render();
+  
+        for(int i = 0; i < cubes.size(); i++){
+          RachelCubeClass current = cubes.get(i);
+          current.speed = map(lerpedAverage, 0.0f, 1.0f, 0, 0.1) + random(-0.02,0.02);
+          current.size = map(lerpedAverage, 0.0f, 1.0f, 10, 180);
+          current.c = c;
+      
+          current. update();
+          current.render();
+          
+        }
         break;
       case 3:
         //Jess Class Calls
