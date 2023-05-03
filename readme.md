@@ -15,6 +15,8 @@ Class Group: TU984/1
 
 # Description of the project
 
+Versatile Audio Visualiser With Mutiple Modes.
+
 # Instructions for use
 
 Press the keys from 0-4 to access the different visuals we all have created!
