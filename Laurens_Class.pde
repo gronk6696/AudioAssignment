@@ -1,22 +1,20 @@
-class laurensAwesomeClass {
+class LaurensAwesomeCircle {
+  float x, y, diameter;
   
-  float x;
-  float y;
-  float circleRadius;
-  
-  laurensAwesomeClass(float x, float y, float circleRadius) {
+  LaurensAwesomeCircle(float x, float y, float diameter) {
     this.x = x;
     this.y = y;
-    this.circleRadius = circleRadius;
+    this.diameter = diameter;
   }
   
   void display() {
-    ellipse(x, y, circleRadius, circleRadius);
+    noStroke();
+    fill(255);
+    ellipse(x, y, diameter, diameter);
   }
   
   void update(float value) {
-    circleRadius = map(value, 0, 1, 50, 200);
-    y = map(value, 0, 1, height - circleRadius, circleRadius);
+    diameter = map(value, 0, 1, 50, 200);
+    y = map(value, 0, 1, height - diameter, diameter);
   }
-  
 }
