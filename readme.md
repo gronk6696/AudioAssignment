@@ -23,15 +23,13 @@ Class Group: TU984/1
 
 | Class/asset | Source |
 |-----------|-----------|
-| MyClass.cs | Self written |
-| MyClass1.cs | Modified from [reference]() |
+| LaurensAwesomeCircle.cs | Self written |
+| RachelCubeClass.cs | SelfWritten |
 | MyClass2.cs | From [reference]() |
 
 # References
 
-# What I am most proud of in the assignment
-
-# Proposal submitted earlier can go here:
+From [reference](https://www.youtube.com/watch?v=56oSUi_ivjM)
 
 ## This is how to markdown text:
 
