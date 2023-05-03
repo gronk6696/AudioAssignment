@@ -9,7 +9,7 @@ ScreensHandler screens;
 
 void setup() {
   //Screen Setup
-  size(512, 512);
+  size(512, 512, P3D);
   colorMode(HSB);
   m = new Minim(this);
   screens = new ScreensHandler(m);
