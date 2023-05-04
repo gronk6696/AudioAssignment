@@ -1,30 +1,42 @@
-class RachelCubeClass {
-  private float angle;
-  private float scaleFactor;
-  
-  RachelCubeClass() {
-    angle = 0;
-    scaleFactor = 1;
-  }
-  
-  void setAngle(float a) {
-    angle += a;
-  }
-  
-  void setScaleFactor(float sf) {
-    scaleFactor = sf;
-  }
-  
-  void drawCube() {
-    float halfHeight = height/2;
-    float halfWidth = width/2;
+public class RachelCubeClass
+  {
+    float size;
+    float speed;
+    float theta;
+    color c;
+    PVector pos;
     
-    pushMatrix();
-    translate(halfWidth, halfHeight, -halfHeight);
-    rotateX(angle);
-    rotateY(angle);
-    scale(scaleFactor);
-    box(100);
-    popMatrix();
+    RachelCubeClass()
+    {  
+      this(100,0,0,color(0,0,0),width/2,height/2);
+    }
+    
+    RachelCubeClass(float size, float speed, float theta, color c, float x, float y)
+    {
+        this.size = size;
+        this.speed = speed;
+        this.theta = theta;
+        this.c = c;
+        this.pos = new PVector(x,y);
+    }
+    
+    void update(){
+      theta += speed;
+    }
+    
+    void render()
+    {
+      pushMatrix();
+      
+      stroke(c);
+      strokeWeight(2);
+      noFill();
+      
+      translate(pos.x,pos.y);
+      rotateX(theta);
+      rotateZ(theta);
+      //fill(c);
+      box(size);
+      popMatrix();
+    }
   }
-}
