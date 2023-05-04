@@ -25,14 +25,18 @@ Press the keys from 0-4 to access the different visuals we all have created!
 
 We used the Minim libary build into Processing to listen to the audio we have and turn it into a number. With that number we can use it to change the location, speed, colour and so much more of our visuals! This means that the visuals update live with the audio.
 
+The screens are handled using a switch case which chooses between different actions depending on the most recent button pressed. Each visualiser is stored in its own class which is then called and altered from the scene manager. The screen manager references the music manager which can then be used by the visualisers. The main executed file is used only as a root for calling in our handlers, keeping the project clean and easy to navigate.
+
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
 | Button Pressed | Class | Source |
 |----------------|-----------|-----------|
-| 1 | LaurensAwesomeCircle.cs | Self written |
-| 2 | RachelCubeClass.cs | Self Written |
-| 3 | JessClass.cs | Self Written |
-| 4 | ThomasClass.cs | Self Written |
+| 1 | LaurensAwesomeCircle.pde | Self written |
+| 2 | RachelCubeClass.pde | Self Written |
+| 3 | JessClass.pde | Self Written |
+| 4 | ThomasClass.pde | Self Written |
+
+All classes within the project are self-written or derived of material provided in Games Programming Lectures. 
 
 # References
 
