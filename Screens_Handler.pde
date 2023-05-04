@@ -10,9 +10,32 @@ class ScreensHandler{
   FFT laurensAwesomeFFT;
   LaurensAwesomeCircle myCircle;
   
+
   //Music Variables
   MusicHandler music;
   Minim m;
+  
+  //Thomas Variables
+  ThomasWave wave1;
+  int bufferSize = 512;
+  
+
+  float[] lerpedBuffer = new float[bufferSize];
+
+  float map1(float a, float b, float c, float d, float e)
+    {
+      float r1 = c - b;
+      float r2 = e - d;
+      float r3 = a - b;
+  
+      return d + (r3 / r1) * r2; 
+    }
+
+  float lerp1(float a, float b, float t)
+    {
+      return a + (b-a) * t;
+    }
+  
   
   //Rachel Variables
   RachelCubeClass box;
@@ -35,6 +58,9 @@ class ScreensHandler{
     //Lauren Variable Assignment 
     laurensAwesomeFFT = new FFT(music.ab.size(), music.ai.sampleRate());
     myCircle = new LaurensAwesomeCircle(width/2, height/2, 200);
+    
+    //Thomas Variable Assignment
+    wave1 = new ThomasWave(150, 150, 100, color(30,140,200));
     
     //Rachel Variable Assignment
     box = new RachelCubeClass(150,0.02f,20,color(30,140,200),width/2,height/2);
@@ -118,7 +144,17 @@ class ScreensHandler{
         break;
       case 4:
         //Thomas Class Calls
+        //thomasBetterFFT.forward(music.ab);
+        //float[] waveform;
+        //waveform = new float[music.bufferSize()];
+        //float xStep = width / (float) waveform.length;
+        //for (int i = 0; i < waveform.length; i++) {
+        //float x = i * xStep;
+        //float y = map(waveform[i], -1, 1, height/2, 0);
+        //float valueT = thomasBetterFFT.getBand(500) * 10;
+        //wave1.update(valueT);
+        //wave1.display();
         break;
-    }
+      //}
   }
 }
