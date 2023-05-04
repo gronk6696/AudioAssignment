@@ -33,8 +33,11 @@ The screens are handled using a switch case which chooses between different acti
 |----------------|-----------|-----------|
 | 1 | LaurensAwesomeCircle.pde | Self written |
 | 2 | RachelCubeClass.pde | Self Written |
-| 3 | JessClass.pde | Self Written |
-| 4 | ThomasClass.pde | Self Written |
+| 3 | Jess_Background.pde | Self Written |
+| 4 | Jess_DJ.pde | Self Written |
+| 5 | Jess_Rays.pde | Self Written |
+| 6 | Jess_Speakers.pde | Self Written |
+| 7 | ThomasClass.pde | Self Written |
 
 All classes within the project are self-written or derived of material provided in Games Programming Lectures. 
 
