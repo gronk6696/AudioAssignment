@@ -1,6 +1,4 @@
-
 // Initialise Variables
-
 //Music Variables
 Minim m;
 
@@ -15,7 +13,6 @@ void setup() {
   screens = new ScreensHandler(m);
 
 }
-
 
 void draw()
 {
