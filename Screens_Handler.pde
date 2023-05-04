@@ -75,9 +75,11 @@ class ScreensHandler{
       case 0:
         //Main Menu
         fill(255);
-        text("Main Menu Placeholder",100,100);
+        textAlign(CENTER);
+        textSize(30);
+        text("Team Radix Audio Assignment",width/2,height/2);
         break;
-        
+     
         
       case 1:
         //Lauren Class Calls
