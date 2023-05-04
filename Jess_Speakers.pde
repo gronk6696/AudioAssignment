@@ -20,7 +20,7 @@ class Speakers{
   void render(){
     lights();
     strokeWeight(1);
-    stroke(255);
+    stroke(70,255,255);
     
     pushMatrix();
       translate(pos.x, pos.y);
@@ -42,11 +42,11 @@ class Speakers{
       int circlePadding = speakerWidth/10;
       int circleCircum = speakerWidth - circlePadding*2;
       
-      float goalColour = map(beatValue, 0f, 100f, 0f, 255f);
-      hue = lerp(hue, goalColour, 0.05);
+      float goalColour = map(beatValue*2, 0f, 100f, 0f, 255f);
+      hue = lerp(hue, goalColour, 0.2);
       
       
-      fill(hue,255,255);
+      fill(70,hue,255);
       for(int i = -1; i <= 1; i++){
         //if(i == 0){continue;}
         circle(0, (0 - (circlePadding + circleCircum))*i, circleCircum);

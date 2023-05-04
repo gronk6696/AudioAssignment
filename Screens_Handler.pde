@@ -112,9 +112,9 @@ class ScreensHandler{
           speaker1.collapse();
           speaker2.collapse();
         }
-        
         speaker1.render();
         speaker2.render();
+        
         break;
       case 4:
         //Thomas Class Calls

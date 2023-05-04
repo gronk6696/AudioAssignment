@@ -4,7 +4,7 @@ class Background{
   float increment = 0.1;
   float hue = 0;
   float radius;
-  float pradius = 10;
+  float pradius = 150;
   
   ArrayList<Ray> rays = new ArrayList<Ray>();
 
@@ -22,7 +22,6 @@ class Background{
     strokeWeight(10);
     
     for(int j = 0; j < rays.size(); j++){
-      print("r");
       Ray current = rays.get(j);
       current.render();
     }
@@ -32,7 +31,7 @@ class Background{
       //hue = abs(map(sin(f),-1,1,0,255));
       hue = map(pradius, 0, 100, 0, 255);
       stroke(hue,255,255);
-      
+      strokeWeight(20);
       //point(x1(f),y1(f));
       point(x1(f),y1(f));
       //point(x2(f),y2(f));
@@ -46,25 +45,24 @@ class Background{
   }
   
   void radiusLerp(){
-    pradius = lerp(pradius, radius, 0.2);
+    pradius = lerp(pradius, radius, 0.15);
   }
   
   void ray(){
-    if(radius > 75){
-      print("w");
-      Ray ray = new Ray(0,0,round(random(-700,700)), round(random(-700,700)), round(random(0,255)));
+    if(radius > 60){
+      Ray ray = new Ray(0,0,round(random(-700,700)), round(random(-700,700)), round(random(150,255)));
       rays.add(ray);
     }
   }
 
 
-  float y1(float g) { return sin(g) * pradius; }
-  float x1(float g) { return cos(g) * pradius; }
+  float y1(float g) { return sin(g) * pradius*2.5; }
+  float x1(float g) { return cos(g) * pradius*2.5; }
   float y2(float g) { return sin(g/4) * pradius * 2.5; }
   float x2(float g) { return cos(g/6)  * pradius * 2.5; }
   
-  float y3(float g) { return -sin(g) * pradius; }
-  float x3(float g) { return -cos(g) * pradius; }
+  float y3(float g) { return -sin(g) * pradius*2.5; }
+  float x3(float g) { return -cos(g) * pradius*2.5; }
   float y4(float g) { return -sin(g/4) * pradius * 2.5; }
   float x4(float g) { return -cos(g/6)  * pradius * 2.5; }
 
