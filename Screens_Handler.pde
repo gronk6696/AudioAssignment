@@ -78,6 +78,8 @@ class ScreensHandler{
         textAlign(CENTER);
         textSize(30);
         text("Team Radix Audio Assignment",width/2,height/2);
+        textSize(20);
+        text("Press Keys 1-4 to see some cool a*s visuals", width/2,300);
         break;
      
         
