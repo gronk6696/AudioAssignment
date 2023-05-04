@@ -24,6 +24,12 @@ class ScreensHandler{
   ArrayList<RachelCubeClass> cubes = new ArrayList<RachelCubeClass>();
   int numCubes = 0;
   
+  //Jess Variables
+  Speakers speaker1;
+  Speakers speaker2;
+  Background bg;
+  FFT jessFFT;
+  
   int screen = 0;
   
   ScreensHandler(Minim m){
@@ -40,6 +46,12 @@ class ScreensHandler{
     box = new RachelCubeClass(150,0.02f,20,color(30,140,200),width/2,height/2);
     betterBox = new RachelCubeClass(50,0.04f,10,color(90,70,100),width/2,height/2);
     evenBetterBox = new RachelCubeClass(250,0.01f,10,color(90,70,100),width/2,height/2);
+    
+    //Jess Variable Assignment
+    jessFFT = new FFT(music.ab.size(), music.ai.sampleRate());
+    speaker1 = new Speakers(75, 3, -PI/5, width - 90, height/2);
+    speaker2 = new Speakers(75, 3, PI/5, 90, height/2);
+    bg = new Background();
   }
   
   void keyPressed(){
@@ -47,13 +59,18 @@ class ScreensHandler{
     else{viewScreen(0);}
   }
     
+    
   void viewScreen(int screen){
     switch (screen){
+      
+      
       case 0:
         //Main Menu
         fill(255);
         text("Main Menu Placeholder",100,100);
         break;
+        
+        
       case 1:
         //Lauren Class Calls
         laurensAwesomeFFT.forward(music.ab);
@@ -61,6 +78,8 @@ class ScreensHandler{
         myCircle.update(value);
         myCircle.display();
         break;
+        
+        
       case 2:
       //rachel class calls
         float total = 0;
@@ -113,8 +132,28 @@ class ScreensHandler{
           
         }
         break;
+        
+        
       case 3:
-        //Jess Class Calls
+        background(0);
+        stroke(255);
+        bg.render();
+        
+        jessFFT.forward(music.ab);
+        float jessValue = jessFFT.getBand(500) * 5;
+        float beatValue = map(jessValue, 0, 1.8, 0, 100);
+        
+        speaker1.beatValue = beatValue;
+        speaker2.beatValue = beatValue;
+        bg.radius = beatValue;
+        
+        if(beatValue> 70){
+          speaker1.collapse();
+          speaker2.collapse();
+        }
+        speaker1.render();
+        speaker2.render();
+        
         break;
       case 4:
         //Thomas Class Calls
