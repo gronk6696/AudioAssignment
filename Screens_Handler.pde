@@ -20,6 +20,11 @@ class ScreensHandler{
   RachelCubeClass evenBetterBox;
   float average = 0;
   float lerpedAverage = 0;
+  
+  //Thomas Variables
+  float lerpedAverageT = 0;
+
+  float[] lerpedBufferT = new float[512];
 
   ArrayList<RachelCubeClass> cubes = new ArrayList<RachelCubeClass>();
   int numCubes = 0;
@@ -52,6 +57,9 @@ class ScreensHandler{
     speaker1 = new Speakers(75, 3, -PI/5, width - 90, height/2);
     speaker2 = new Speakers(75, 3, PI/5, 90, height/2);
     bg = new Background();
+    
+    //Thomas Variable Assignment
+    
   }
   
   void keyPressed(){
@@ -157,6 +165,28 @@ class ScreensHandler{
         break;
       case 4:
         //Thomas Class Calls
+        float m = map(1, 0, 100, 200, 400);
+  
+  
+        background(0);
+        colorMode(HSB);
+        stroke(255);
+        float half = height / 2;
+        float totalT = 0;
+        for (int i = 0 ; i < music.ab.size(); i ++)
+        {
+          totalT += abs(music.ab.get(i));
+          float cT = map(i, 0, music.ab.size(), 0, 255);
+          stroke(cT, 255, 255);
+          lerpedBufferT[i] = lerp(lerpedBufferT[i], music.ab.get(i), 0.1f);
+          line(i, half, i, half + (lerpedBufferT[i] * half * 4));
+        }
+        float average = totalT / (float) music.ab.size();
+        
+        lerpedAverage = lerp(lerpedAverage, average, 0.1f);
+        
+        float radiusT = 50 + (lerpedAverage * 500);
+        circle(width / 2, 200, radiusT);
         break;
     }
   }
